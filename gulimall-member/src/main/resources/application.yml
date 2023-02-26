@@ -5,6 +5,14 @@ spring:
     url: jdbc:mysql://192.168.202.211:3306/gulimall_ums
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  #服务注册进入nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: gulimall-member
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -13,5 +21,5 @@ mybatis-plus:
 
 # 应用服务 WEB 访问端口
 server:
-  port: 8000
+  port: 8001
 
