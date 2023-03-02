@@ -24,7 +24,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  *
  * 2、逻辑删除
  *  1）、配置全局的逻辑删除规则（省略）
- *  2）、配置逻辑删除的组件Bean（省略）
+ *  2）、配置逻辑删除的组件Bean（省略,3.2.0 高版本可删除）
  *  3）、给Bean加上逻辑删除注解@TableLogic
  *
  * 3、JSR303
