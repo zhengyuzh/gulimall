@@ -12,6 +12,14 @@ spring:
           predicates:
             - Query=url,qq
 
+#顺序有将就，如果/api/** 放在前面，其它的/api/product/**则看不到
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
         - id: admin_route
           uri: lb://renren-fast
           predicates:
