@@ -77,6 +77,11 @@
             <version>2.0.2</version>
             <scope>compile</scope>
         </dependency>
+        <!--这里直接移动到另外一个pom作为公共-->
+        <!--<dependency>-->
+        <!--    <groupId>com.alibaba.cloud</groupId>-->
+        <!--    <artifactId>spring-cloud-starter-alicloud-oss</artifactId>-->
+        <!--</dependency>-->
 
 
     </dependencies>

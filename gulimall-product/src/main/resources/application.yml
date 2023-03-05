@@ -8,6 +8,11 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI5tRbaeFt4UNGBSzAUtfk
+      secret-key: jcoKe3xZKOj4gH0FVDG5YY4mCTUnBb
+      oss:
+        endpoint: oss-cn-guangzhou.aliyuncs.com
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 

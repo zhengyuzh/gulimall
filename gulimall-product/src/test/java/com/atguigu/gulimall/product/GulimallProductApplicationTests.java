@@ -1,9 +1,6 @@
 package com.atguigu.gulimall.product;
 
-import com.aliyun.oss.ClientException;
-import com.aliyun.oss.OSS;
-import com.aliyun.oss.OSSClientBuilder;
-import com.aliyun.oss.OSSException;
+import com.aliyun.oss.*;
 import com.aliyun.oss.model.PutObjectRequest;
 import com.aliyun.oss.model.PutObjectResult;
 import com.atguigu.gulimall.product.entity.BrandEntity;
@@ -41,6 +38,9 @@ public class GulimallProductApplicationTests {
     @Autowired
     BrandService brandService;
 
+    @Autowired
+    OSSClient ossClient;
+
 
     @Autowired
     CategoryService categoryService;
@@ -52,23 +52,11 @@ public class GulimallProductApplicationTests {
 //    }
 
     @Test
-    public void testOss() throws FileNotFoundException {
-        // Endpoint以华东1（杭州）为例，其它Region请按实际情况填写。
-        String endpoint = "https://oss-cn-guangzhou.aliyuncs.com";
-        // 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。
-        String accessKeyId = "LTAI5tRbaeFt4UNGBSzAUtfk";
-        String accessKeySecret = "jcoKe3xZKOj4gH0FVDG5YY4mCTUnBb";
-        // 填写Bucket名称，例如examplebucket。
-        String bucketName = "examplebucket";
-        // 填写Object完整路径，完整路径中不能包含Bucket名称，例如exampledir/exampleobject.txt。
-        String objectName = "exampledir/exampleobject.txt";
-
-        // 创建OSSClient实例。
-        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+    public void testOssDemo() throws FileNotFoundException {
 
         //上传文件流
-        FileInputStream inputStream = new FileInputStream("F:\\Users\\lenovo\\Pictures\\联想截图\\联想截图_20221207142850.png");
-        ossClient.putObject("gulimall-zhengyu","联想截图_20221207142850.png",inputStream);
+        FileInputStream inputStream = new FileInputStream("F:\\Users\\lenovo\\Documents\\HBuilderProjects\\西南大学静态网页\\img\\401.jpg");
+        ossClient.putObject("gulimall-zhengyu","国企1.jpg",inputStream);
 
         //关闭OSSCLient
         ossClient.shutdown();
@@ -78,6 +66,34 @@ public class GulimallProductApplicationTests {
 
 
     }
+
+//    @Test
+//    public void testOss() throws FileNotFoundException {
+//        // Endpoint以华东1（杭州）为例，其它Region请按实际情况填写。
+//        String endpoint = "https://oss-cn-guangzhou.aliyuncs.com";
+//        // 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。
+//        String accessKeyId = "LTAI5tRbaeFt4UNGBSzAUtfk";
+//        String accessKeySecret = "jcoKe3xZKOj4gH0FVDG5YY4mCTUnBb";
+//        // 填写Bucket名称，例如examplebucket。
+//        String bucketName = "examplebucket";
+//        // 填写Object完整路径，完整路径中不能包含Bucket名称，例如exampledir/exampleobject.txt。
+//        String objectName = "exampledir/exampleobject.txt";
+//
+//        // 创建OSSClient实例。
+//        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
+//
+//        //上传文件流
+//        FileInputStream inputStream = new FileInputStream("F:\\Users\\lenovo\\Pictures\\联想截图\\联想截图_20221207142850.png");
+//        ossClient.putObject("gulimall-zhengyu","联想截图_20221207142850.png",inputStream);
+//
+//        //关闭OSSCLient
+//        ossClient.shutdown();
+//        System.out.println("上传成功...");
+//
+//
+//
+//
+//    }
 
 
     @Test
