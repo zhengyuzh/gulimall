@@ -9,11 +9,19 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+/**
+ * @author Lenovo
+ */
 @Documented
 @Constraint(validatedBy = { ListValueConstraintValidator.class })
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
 @Retention(RUNTIME)
 public @interface ListValue {
+
+    /**
+     * 添加校验
+     * @return
+     */
     String message() default "{com.atguigu.common.valid.ListValue.message}";
 
     Class<?>[] groups() default { };
