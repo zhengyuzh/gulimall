@@ -7,7 +7,7 @@ import com.atguigu.gulimall.product.entity.BrandEntity;
 import java.util.Map;
 
 /**
- * Ʒ?
+ * 品牌
  *
  * @author zhengyuzhu
  * @email 2977429967@qq.com
@@ -16,5 +16,7 @@ import java.util.Map;
 public interface BrandService extends IService<BrandEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void updateDetail(BrandEntity brand);
 }
 
