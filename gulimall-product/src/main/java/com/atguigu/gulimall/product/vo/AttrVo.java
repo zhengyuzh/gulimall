@@ -2,7 +2,10 @@ package com.atguigu.gulimall.product.vo;
 
 
 import lombok.Data;
-
+/**
+ * 新增实体类
+ * @author zyz
+ */
 @Data
 public class AttrVo {
     /**

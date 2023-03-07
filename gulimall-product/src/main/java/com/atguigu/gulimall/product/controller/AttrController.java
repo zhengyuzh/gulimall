@@ -70,14 +70,11 @@ public class AttrController {
 
 
     /**
-     * 信息
+     * 查询信息
      */
     @RequestMapping("/info/{attrId}")
-    //@RequiresPermissions("product:attr:info")
     public R info(@PathVariable("attrId") Long attrId){
-        //AttrEntity attr = attrService.getById(attrId);
         AttrRespVo respVo = attrService.getAttrInfo(attrId);
-
         return R.ok().put("attr", respVo);
     }
 
@@ -85,10 +82,8 @@ public class AttrController {
      * 保存
      */
     @RequestMapping("/save")
-    //@RequiresPermissions("product:attr:save")
     public R save(@RequestBody AttrVo attr){
         attrService.saveAttr(attr);
-
         return R.ok();
     }
 
@@ -99,10 +94,8 @@ public class AttrController {
      * 修改
      */
     @RequestMapping("/update")
-    //@RequiresPermissions("product:attr:update")
     public R update(@RequestBody AttrVo attr){
         attrService.updateAttr(attr);
-
         return R.ok();
     }
 

@@ -59,6 +59,13 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         return new PageUtils(page);
     }
 
+    /**
+     * 规格参数列表
+     * @param params
+     * @param catelogId
+     * @param type
+     * @return
+     */
     @Override
     public PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId, String type) {
         QueryWrapper<AttrEntity> queryWrapper = new QueryWrapper<AttrEntity>().eq("attr_type","base".equalsIgnoreCase(type)? ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode():ProductConstant.AttrEnum.ATTR_TYPE_SALE.getCode());
@@ -108,13 +115,16 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         return pageUtils;
     }
 
+    /**
+     * 信息查询
+     * @param attrId
+     * @return
+     */
     @Override
     public AttrRespVo getAttrInfo(Long attrId) {
         AttrRespVo respVo = new AttrRespVo();
         AttrEntity attrEntity = this.getById(attrId);
         BeanUtils.copyProperties(attrEntity,respVo);
-
-
 
         if(attrEntity.getAttrType() == ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode()){
             //1、设置分组信息
@@ -163,6 +173,10 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
 
     }
 
+    /**
+     * 信息修改
+     * @param attr
+     */
     @Transactional
     @Override
     public void updateAttr(AttrVo attr) {
