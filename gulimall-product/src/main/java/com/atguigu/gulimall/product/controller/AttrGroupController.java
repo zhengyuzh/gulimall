@@ -43,6 +43,11 @@ public class AttrGroupController {
     @Autowired
     AttrAttrgroupRelationService relationService;
 
+    /**
+     * 新增分组与属性关联
+     * @param vos
+     * @return
+     */
     ///product/attrgroup/attr/relation
     @PostMapping("/attr/relation")
     public R addRelation(@RequestBody List<AttrGroupRelationVo> vos){
