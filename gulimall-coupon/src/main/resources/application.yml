@@ -10,9 +10,9 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-      config:
-        server-addr: 127.0.0.1:8848
-        file-extension: yaml
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        file-extension: yaml
   application:
     name: gulimall-coupon
 
@@ -29,9 +29,11 @@ mybatis-plus:
 server:
   port: 7000
 
-
+logging:
+  level:
+    com.atguigu.gulimall: debug
 
 #application.yml
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
 

@@ -21,5 +21,5 @@ mybatis-plus:
 
 # 应用服务 WEB 访问端口
 server:
-  port: 8001
+  port: 8003
 

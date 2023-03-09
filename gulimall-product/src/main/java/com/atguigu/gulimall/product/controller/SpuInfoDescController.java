@@ -58,7 +58,6 @@ public class SpuInfoDescController {
      * 保存
      */
     @RequestMapping("/save")
-    //@RequiresPermissions("product:spuinfodesc:save")
     public R save(@RequestBody SpuInfoDescEntity spuInfoDesc){
 		spuInfoDescService.save(spuInfoDesc);
 
