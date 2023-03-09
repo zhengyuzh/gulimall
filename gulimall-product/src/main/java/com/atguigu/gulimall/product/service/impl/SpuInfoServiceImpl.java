@@ -201,6 +201,11 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         this.baseMapper.insert(infoEntity);
     }
 
+    /**
+     * 模糊检索
+     * @param params
+     * @return
+     */
     @Override
     public PageUtils queryPageByCondition(Map<String, Object> params) {
 

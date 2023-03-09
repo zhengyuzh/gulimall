@@ -37,6 +37,11 @@ public class AttrController {
 
     ///product/attr/info/{attrId}
 
+    /**
+     * spu规格维护
+     * @param spuId
+     * @return
+     */
     // /product/attr/base/listforspu/{spuId}
     @GetMapping("/base/listforspu/{spuId}")
     public R baseAttrlistforspu(@PathVariable("spuId") Long spuId){
@@ -99,6 +104,12 @@ public class AttrController {
         return R.ok();
     }
 
+    /**
+     * 修改
+     * @param spuId
+     * @param entities
+     * @return
+     */
     ///product/attr/update/{spuId}
     @PostMapping("/update/{spuId}")
     public R updateSpuAttr(@PathVariable("spuId") Long spuId,

@@ -15,7 +15,7 @@ spring:
         endpoint: oss-cn-guangzhou.aliyuncs.com
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
-
+#格式化时间格式，放置返回给前端的值不规范
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml

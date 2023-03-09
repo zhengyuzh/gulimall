@@ -34,6 +34,11 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
         this.baseMapper.insert(skuInfoEntity);
     }
 
+    /**
+     * 模糊查询
+     * @param params
+     * @return
+     */
     @Override
     public PageUtils queryPageByCondition(Map<String, Object> params) {
         QueryWrapper<SkuInfoEntity> queryWrapper = new QueryWrapper<>();
